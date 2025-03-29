@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Quest - Conquer Your Knowledge!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="exam-setup-container">
+        <h2>Enter Exam ID to Begin</h2>
+        <input type="number" id="exam-id-input" placeholder="Exam ID">
+        <button id="start-exam-btn">Start Exam</button>
+    </div>
+    <div id="quiz-container" style="display: none;">
+        <div id="quiz-header">
+            <h2>Quiz Quest</h2>
+        </div>
+        <div id="question-container">
+            <h3 id="question">Loading Question...</h3>
+        </div>
+        <div id="options-container">
+            <button class="option" data-option="1">Option 1</button>
+            <button class="option" data-option="2">Option 2</button>
+            <button class="option" data-option="3">Option 3</button>
+            <button class="option" data-option="4">Option 4</button>
+        </div>
+        <div id="navigation-container">
+            <button id="prev-btn" disabled>Previous</button>
+            <span id="question-number">1 / 10</span>
+            <button id="next-btn">Next</button>
+        </div>
+        <div id="timer">Time Left: <span id="time">00:00</span></div>
+        <button id="submit-btn">Submit Exam</button>
+        <div id="quote-container">
+            "The only way to do great work is to love what you do." - Steve Jobs
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
