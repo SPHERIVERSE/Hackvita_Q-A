@@ -2,9 +2,10 @@ from flask import Blueprint, jsonify, request, abort
 from backend.database import db
 from backend.models import Question, Exam, ExamQuestion, Student
 from backend.utils import select_random_questions, shuffle_questions
-import csv  # Import the csv module
+import csv
 
 main_bp = Blueprint('main', __name__)
+
 
 @main_bp.route('/upload_questions', methods=['POST'])
 def upload_questions():
@@ -42,18 +43,24 @@ def upload_questions():
     else:
         abort(400, "Invalid file", 400)
 
+
 @main_bp.route('/questions', methods=['GET'])
 def get_questions():
     questions = Question.query.all()
-    return jsonify([{"id": q.id, "text": q.text, "option1": q.option1, "option2": q.option2, "option3": q.option3, "option4": q.option4} for q in questions])
+    return jsonify([{"id": q.id, "text": q.text, "option1": q.option1, "option2": q.option2, "option3": q.option3,
+                    "option4": q.option4} for q in questions])
+
 
 @main_bp.route('/questions', methods=['POST'])
 def create_question():
     data = request.get_json()
-    new_question = Question(text=data['text'], option1=data['option1'], option2=data['option2'], option3=data['option3'], option4=data['option4'], correct_answer=data['correct_answer'], topic=data.get('topic'), difficulty=data.get('difficulty'))
+    new_question = Question(text=data['text'], option1=data['option1'], option2=data['option2'], option3=data['option3'],
+                            option4=data['option4'], correct_answer=data['correct_answer'], topic=data.get('topic'),
+                            difficulty=data.get('difficulty'))
     db.session.add(new_question)
     db.session.commit()
     return jsonify({"message": "Question created"}), 201
+
 
 @main_bp.route('/exams', methods=['POST'])
 def create_exam():
@@ -69,7 +76,7 @@ def create_exam():
 
     exam_questions = []
     for i, question_id in enumerate(selected_question_ids):
-        exam_question = ExamQuestion(exam_id=new_exam.id, question_id=question_id, question_order=i + 1, question_id=question_id)
+        exam_question = ExamQuestion(exam_id=new_exam.id, question_id=question_id, question_order=i + 1)
         exam_questions.append(exam_question)
 
     # Shuffle the questions for each candidate
@@ -80,11 +87,13 @@ def create_exam():
 
     return jsonify({"message": "Exam created", "exam_id": new_exam.id}), 201
 
+
 @main_bp.route('/exams/<int:exam_id>/questions', methods=['GET'])
 def get_exam_questions(exam_id):
     exam = Exam.query.get_or_404(exam_id)
     # Fetch the ExamQuestion entries and join with the Question model
-    exam_questions = db.session.query(ExamQuestion, Question).join(Question).filter(ExamQuestion.exam_id == exam_id).order_by(ExamQuestion.question_order).all()
+    exam_questions = db.session.query(ExamQuestion, Question).join(Question).filter(
+        ExamQuestion.exam_id == exam_id).order_by(ExamQuestion.question_order).all()
     # Ensure questions are shuffled
     questions_list = []
     for eq, q in exam_questions:
@@ -98,6 +107,7 @@ def get_exam_questions(exam_id):
             "question_order": eq.question_order  # Include question_order
         })
     return jsonify(questions_list)
+
 
 @main_bp.route('/exams/<int:exam_id>/submit', methods=['POST'])
 def submit_exam(exam_id):
@@ -116,10 +126,12 @@ def submit_exam(exam_id):
 
     return jsonify({"message": "Exam submitted"}), 200
 
+
 @main_bp.route('/exams/<int:exam_id>/results', methods=['GET'])
 def get_exam_results(exam_id):
     exam = Exam.query.get_or_404(exam_id)
-    exam_questions = db.session.query(ExamQuestion, Question).join(Question).filter(ExamQuestion.exam_id == exam_id).order_by(ExamQuestion.question_order).all()
+    exam_questions = db.session.query(ExamQuestion, Question).join(Question).filter(
+        ExamQuestion.exam_id == exam_id).order_by(ExamQuestion.question_order).all()
 
     correct_count = 0
     attempted_count = 0

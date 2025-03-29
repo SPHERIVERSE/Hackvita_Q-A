@@ -1,4 +1,31 @@
 text,option1,option2,option3,option4,correct_answer,topic,difficulty
-    What is the capital of France?,London,Paris,Rome,Berlin,2,Geography,1
-    What is 2 + 2?,3,4,5,6,2,Math,1
-    What is the largest planet?,Earth,Mars,Jupiter,Saturn,3,Astronomy,1
+What is the capital of France?,London,Berlin,Paris,Rome,Paris,Geography,Easy
+Which planet is known as the "Red Planet"?,Venus,Mars,Jupiter,Saturn,Mars,Astronomy,Easy
+What is 2 + 2?,3,4,5,6,4,Mathematics,Easy
+Who wrote "Romeo and Juliet"?,Charles Dickens,Jane Austen,William Shakespeare,Mark Twain,William Shakespeare,Literature,Medium
+What is the chemical symbol for water?,H2O2,CO2,NaCl,H2O,H2O,Chemistry,Easy
+Which animal is known as the "King of the Jungle"?,Elephant,Tiger,Lion,Giraffe,Lion,Biology,Medium
+What is the largest ocean in the world?,Atlantic Ocean,Indian Ocean,Arctic Ocean,Pacific Ocean,Pacific Ocean,Geography,Medium
+What is the square root of 144?,10,12,14,16,12,Mathematics,Medium
+Which famous scientist developed the theory of relativity?,Isaac Newton,Albert Einstein,Galileo Galilei,Stephen Hawking,Albert Einstein,Physics,Medium
+In which year did World War II end?,1943,1945,1947,1950,1945,History,Medium
+What is the main function of the heart?,Digestion,Respiration,Circulation,Excretion,Circulation,Biology,Medium
+Which programming language is known for its use in web development?,Java,Python,JavaScript,C++,JavaScript,Computer Science,Medium
+What is the value of pi (π) approximately?,2.71,3.14,1.62,4.0,3.14,Mathematics,Medium
+Which artist painted the "Mona Lisa"?,Vincent van Gogh,Leonardo da Vinci,Pablo Picasso,Claude Monet,Leonardo da Vinci,Art,Medium
+What is the process by which plants make their own food called?,Respiration,Photosynthesis,Transpiration,Fermentation,Photosynthesis,Biology,Medium
+What is the largest continent?,Europe,Africa,Asia,North America,Asia,Geography,Medium
+What is the derivative of $x^2$?,$x$,$2x$,$x^3/3$,$1$,$2x$,Calculus,Hard
+Which element has the atomic number 79?,Gold,Silver,Platinum,Copper,Gold,Chemistry,Medium
+What is the capital of Japan?,Seoul,Beijing,Tokyo,Bangkok,Tokyo,Geography,Easy
+What is the primary function of a CPU?,Memory storage,Data processing,Graphics rendering,Network communication,Data processing,Computer Science,Medium
+What is the formula for calculating the area of a circle?,$πr$,$2πr$,$πr^2$,$πd$,$πr^2$,Mathematics,Medium
+Who is the author of "Pride and Prejudice"?,Emily Bronte,Charlotte Bronte,Jane Austen,George Eliot,Jane Austen,Literature,Medium
+Which gas makes up the majority of Earth's atmosphere?,Oxygen,Carbon Dioxide,Nitrogen,Argon,Nitrogen,Chemistry,Medium
+What is the speed of light in a vacuum approximately?,300,000 km/s,150,000 km/s,100,000 km/s,500,000 km/s,300,000 km/s,Physics,Medium
+What is the function of the kidneys?,Digestion,Filtering blood,Respiration,Muscle contraction,Filtering blood,Biology,Medium
+Which country is known as the "Land of the Rising Sun"?,China,Korea,Japan,Vietnam,Japan,Geography,Medium
+What is the integral of $1/x$?,$x$,$ln|x|$,$e^x$,$1/x^2$,$ln|x|$,Calculus,Hard
+What is the chemical formula for table salt?,HCl,NaCl,KCl,MgCl2,NaCl,Chemistry,Easy
+Who invented the telephone?,Thomas Edison,Alexander Graham Bell,Nikola Tesla,Benjamin Franklin,Alexander Graham Bell,History,Medium
+Which planet has the most moons?,Earth,Mars,Jupiter,Saturn,Saturn,Astronomy,Medium
